@@ -78,7 +78,7 @@ RUN { \
 # don't reverse lookup hostnames, they are usually another container
 	&& echo '[mysqld]\nskip-host-cache\nskip-name-resolve' > /etc/mysql/conf.d/docker.cnf \
 	&& echo '\nlower_case_table_names=1' >> /etc/mysql/conf.d/docker.cnf \
-	&& echo '\ndefault-time-zone=\'+08:00\'' >> /etc/mysql/conf.d/docker.cnf 
+	&& echo '\ndefault-time-zone="+08:00"' >> /etc/mysql/conf.d/docker.cnf 
 
 RUN cp -f /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
